@@ -1,0 +1,44 @@
+A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward.
+
+Given a string , print Yes if it is a palindrome, print No otherwise.
+
+Constraints
+
+ will consist at most  lower case english letters.
+Sample Input
+
+madam
+Sample Output
+
+Yes
+
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        int middleIndex = A.length() / 2;
+        List<Character> items = new LinkedList<Character>();
+        for(int i = 0 ; i < middleIndex; i ++ ) {
+            items.add(A.charAt(i));
+        }
+        boolean palindrome = true;
+        middleIndex = A.length() % 2 == 0? middleIndex : (middleIndex + 1);
+        for(int i = middleIndex; i < A.length() ; i ++) {
+            if(A.charAt(i) == items.get(items.size() - 1 )) {
+                items.remove(items.size() - 1);
+            } else {
+                palindrome = false;
+                break;
+            }
+        }
+        System.out.println(palindrome? "Yes" : "No");
+    }
+}
