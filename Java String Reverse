@@ -42,3 +42,26 @@ public class Solution {
         System.out.println(palindrome? "Yes" : "No");
     }
 }
+
+
+
+another solution 
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        StringBuilder builder = new StringBuilder(A);
+        String reverseA = builder.reverse().toString();
+        System.out.println(reverseA.equals(A) ? "Yes" : "No");
+    }
+}
+
+
+
